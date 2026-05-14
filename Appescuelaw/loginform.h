@@ -1,4 +1,11 @@
+// ===== loginForm.h =====
+
 #pragma once
+
+#include "matriculaForm.h"
+#include "secretariaForm.h"
+#include "adminForm.h"
+#include "claseDatos.h"
 
 namespace Appescuelaw {
 
@@ -9,167 +16,132 @@ namespace Appescuelaw {
 	using namespace System::Data;
 	using namespace System::Drawing;
 
-	/// <summary>
-	/// Resumen de MyForm2
-	/// </summary>
-	public ref class MyForm2 : public System::Windows::Forms::Form
+	public ref class loginForm : public System::Windows::Forms::Form
 	{
 	public:
-		MyForm2(void)
+		loginForm(void)
 		{
 			InitializeComponent();
-			//
-			//TODO: agregar código de constructor aquí
-			//
 		}
 
 	protected:
-		/// <summary>
-		/// Limpiar los recursos que se estén usando.
-		/// </summary>
-		~MyForm2()
+		~loginForm()
 		{
 			if (components)
 			{
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Label^ label1;
-
-
-
-
-
-	private: System::Windows::Forms::Panel^ panel1;
-	private: System::Windows::Forms::Button^ button2;
-	private: System::Windows::Forms::TextBox^ textBox3;
-	private: System::Windows::Forms::Label^ label4;
-	private: System::Windows::Forms::TextBox^ textBox4;
-	private: System::Windows::Forms::Label^ label5;
-
-	protected:
 
 	private:
-		/// <summary>
-		/// Variable del diseñador necesaria.
-		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::Windows::Forms::TextBox^ textBox1;
+		System::Windows::Forms::TextBox^ textBox2;
+		System::Windows::Forms::Button^ button1;
+		System::Windows::Forms::Label^ label1;
+		System::Windows::Forms::Label^ label2;
+
+	private:
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
-		/// <summary>
-		/// Método necesario para admitir el Diseñador. No se puede modificar
-		/// el contenido de este método con el editor de código.
-		/// </summary>
+
 		void InitializeComponent(void)
 		{
-			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm2::typeid));
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
-			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
-			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->panel1->SuspendLayout();
+			this->label2 = (gcnew System::Windows::Forms::Label());
+
 			this->SuspendLayout();
-			// 
+
+			// textBox1
+			this->textBox1->Location = System::Drawing::Point(321, 142);
+			this->textBox1->Size = System::Drawing::Size(151, 20);
+
+			// textBox2
+			this->textBox2->Location = System::Drawing::Point(321, 193);
+			this->textBox2->Size = System::Drawing::Size(151, 20);
+			this->textBox2->UseSystemPasswordChar = true;
+
+			// button1
+			this->button1->Location = System::Drawing::Point(303, 246);
+			this->button1->Size = System::Drawing::Size(112, 41);
+			this->button1->Text = L"Ingresar";
+			this->button1->Click +=
+				gcnew System::EventHandler(this, &loginForm::button1_Click);
+
 			// label1
-			// 
 			this->label1->AutoSize = true;
-			this->label1->BackColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 72, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(262, 42);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(676, 109);
-			this->label1->TabIndex = 1;
-			this->label1->Text = L"Escuela chikitos";
-			// 
-			// panel1
-			// 
-			this->panel1->Controls->Add(this->button2);
-			this->panel1->Controls->Add(this->textBox3);
-			this->panel1->Controls->Add(this->label4);
-			this->panel1->Controls->Add(this->textBox4);
-			this->panel1->Controls->Add(this->label5);
-			this->panel1->Location = System::Drawing::Point(342, 192);
-			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(518, 384);
-			this->panel1->TabIndex = 8;
-			// 
-			// textBox3
-			// 
-			this->textBox3->Location = System::Drawing::Point(117, 162);
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(100, 20);
-			this->textBox3->TabIndex = 10;
-			// 
-			// label4
-			// 
-			this->label4->AutoSize = true;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label4->Location = System::Drawing::Point(113, 138);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(78, 19);
-			this->label4->TabIndex = 9;
-			this->label4->Text = L"Contraseña";
-			// 
-			// textBox4
-			// 
-			this->textBox4->Location = System::Drawing::Point(117, 103);
-			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(100, 20);
-			this->textBox4->TabIndex = 8;
-			// 
-			// label5
-			// 
-			this->label5->AutoSize = true;
-			this->label5->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(113, 63);
-			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(59, 19);
-			this->label5->TabIndex = 7;
-			this->label5->Text = L"Usuario:";
-			// 
-			// button2
-			// 
-			this->button2->BackColor = System::Drawing::SystemColors::Highlight;
-			this->button2->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->button2->Location = System::Drawing::Point(300, 306);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(205, 65);
-			this->button2->TabIndex = 11;
-			this->button2->Text = L"Ingresar";
-			this->button2->UseVisualStyleBackColor = false;
-			this->button2->Click += gcnew System::EventHandler(this, &MyForm2::button2_Click);
-			// 
-			// MyForm2
-			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
-			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
-			this->ClientSize = System::Drawing::Size(1197, 674);
-			this->Controls->Add(this->panel1);
+			this->label1->Location = System::Drawing::Point(266, 145);
+			this->label1->Text = L"Usuario";
+
+			// label2
+			this->label2->AutoSize = true;
+			this->label2->Location = System::Drawing::Point(248, 196);
+			this->label2->Text = L"Contraseña";
+
+			// loginForm
+			this->ClientSize = System::Drawing::Size(737, 444);
+
+			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
-			this->Name = L"MyForm2";
-			this->Text = L"MyForm2";
-			this->Load += gcnew System::EventHandler(this, &MyForm2::MyForm2_Load);
-			this->panel1->ResumeLayout(false);
-			this->panel1->PerformLayout();
+			this->Controls->Add(this->button1);
+			this->Controls->Add(this->textBox2);
+			this->Controls->Add(this->textBox1);
+
+			this->Text = L"Login";
+
 			this->ResumeLayout(false);
 			this->PerformLayout();
-
 		}
+
 #pragma endregion
-	private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-private: System::Void MyForm2_Load(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-};
+
+	private:
+
+		System::Void button1_Click(System::Object^ sender, System::EventArgs^ e)
+		{
+			String^ usuario = textBox1->Text->Trim();
+			String^ password = textBox2->Text->Trim();
+
+			// ADMIN
+			if (usuario == "admin" && password == "789")
+			{
+				adminForm^ form = gcnew adminForm();
+				form->Show();
+
+				this->Hide();
+				return;
+			}
+
+			// SECRETARIA
+			if (usuario == "secretaria" && password == "456")
+			{
+				secretariaForm^ form = gcnew secretariaForm();
+				form->Show();
+
+				this->Hide();
+				return;
+			}
+
+			// ESTUDIANTES
+			for each (Estudiante ^ e in DatosSistema::estudiantes)
+			{
+				if (e->usuario == usuario &&
+					e->password == password)
+				{
+					matriculaForm^ form =
+						gcnew matriculaForm();
+
+					form->Show();
+
+					this->Hide();
+					return;
+				}
+			}
+
+			MessageBox::Show("Usuario o contraseña incorrectos");
+		}
+	};
 }
