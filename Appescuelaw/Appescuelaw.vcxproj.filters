@@ -33,9 +33,6 @@
     <ClCompile Include="adminForm.cpp">
       <Filter>Archivos de encabezado</Filter>
     </ClCompile>
-    <ClCompile Include="claseDatos.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="matriculaForm.h">
@@ -50,10 +47,13 @@
     <ClInclude Include="secretariaForm.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
+    <ClInclude Include="claseDatos.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
     <ClInclude Include="adminForm.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="claseDatos.h">
+    <ClInclude Include="Usuario.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>

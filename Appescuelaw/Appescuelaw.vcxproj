@@ -120,15 +120,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="claseDatos.cpp" />
+    <ClCompile Include="adminForm.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="matriculaForm.cpp" />
     <ClCompile Include="mainForm.cpp" />
     <ClCompile Include="loginForm.cpp" />
-    <ClCompile Include="adminForm.cpp" />
     <ClCompile Include="secretariaForm.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="adminForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="claseDatos.h" />
     <ClInclude Include="matriculaForm.h">
       <FileType>CppForm</FileType>
@@ -139,12 +141,10 @@
     <ClInclude Include="loginform.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="adminForm.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
     <ClInclude Include="secretariaForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Usuario.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="adminForm.resx">

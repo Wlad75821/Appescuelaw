@@ -1,0 +1,2 @@
+wladimir,123,estudiante
+lola,456,secretaria
